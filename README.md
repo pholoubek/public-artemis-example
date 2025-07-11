@@ -4,19 +4,23 @@ A WordPress-powered static site that combines the ease of WordPress content mana
 
 ## 🚀 Quick Start
 
-1. **Local Development Setup**
+1. **View Live Site**
+   - Visit: https://pholoubek.github.io/public-artemis-example/
+   - Currently shows a "Hello World" page
+
+2. **Local Development Setup**
    ```bash
    git clone https://github.com/pholoubek/public-artemis-example.git
    cd public-artemis-example
    docker-compose -f docker/docker-compose.yml up -d
    ```
 
-2. **Access WordPress Admin**
+3. **Access WordPress Admin**
    - URL: http://localhost:8080/wp-admin
    - Username: admin
    - Password: admin123
 
-3. **Deploy to GitHub Pages**
+4. **Deploy to GitHub Pages**
    - Push changes to main branch
    - GitHub Actions will automatically build and deploy
 
