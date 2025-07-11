@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Static site generator for WordPress",
   "main": "generate-static.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "node generate-static.js",
     "dev": "node generate-static.js --dev",
@@ -12,9 +15,7 @@
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
     "fs-extra": "^11.1.1",
-    "puppeteer": "^21.5.0",
-    "yargs": "^17.7.2",
-    "sharp": "^0.32.6"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
