@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node generate-static.js",
+    "build-static": "node build-static.js",
     "dev": "node generate-static.js --dev",
     "clean": "rm -rf ../dist"
   },
