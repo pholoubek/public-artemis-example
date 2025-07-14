@@ -15,16 +15,19 @@ add_action('after_setup_theme', 'artemis_setup');
 
 // Enqueue styles and scripts
 function artemis_scripts() {
+    // Use time() for cache busting during development
+    $version = time();
+    
     // Enqueue global design system variables first
-    wp_enqueue_style('artemis-global-variables', get_template_directory_uri() . '/assets/css/global-variables.css', array(), '1.0');
+    wp_enqueue_style('artemis-global-variables', get_template_directory_uri() . '/assets/css/global-variables.css', array(), $version);
     
     // Enqueue base styles that use the design tokens
-    wp_enqueue_style('artemis-base-styles', get_template_directory_uri() . '/assets/css/base-styles.css', array('artemis-global-variables'), '1.0');
+    wp_enqueue_style('artemis-base-styles', get_template_directory_uri() . '/assets/css/base-styles.css', array('artemis-global-variables'), $version);
     
     // Enqueue main theme stylesheet
-    wp_enqueue_style('artemis-style', get_stylesheet_uri(), array('artemis-global-variables', 'artemis-base-styles'), '1.0');
+    wp_enqueue_style('artemis-style', get_stylesheet_uri(), array('artemis-global-variables', 'artemis-base-styles'), $version);
     
-    wp_enqueue_script('artemis-header', get_template_directory_uri() . '/assets/js/header.js', array(), '1.0', true);
+    wp_enqueue_script('artemis-header', get_template_directory_uri() . '/assets/js/header.js', array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'artemis_scripts');
 
