@@ -15,7 +15,15 @@ add_action('after_setup_theme', 'artemis_setup');
 
 // Enqueue styles and scripts
 function artemis_scripts() {
-    wp_enqueue_style('artemis-style', get_stylesheet_uri(), array(), '1.0');
+    // Enqueue global design system variables first
+    wp_enqueue_style('artemis-global-variables', get_template_directory_uri() . '/assets/css/global-variables.css', array(), '1.0');
+    
+    // Enqueue base styles that use the design tokens
+    wp_enqueue_style('artemis-base-styles', get_template_directory_uri() . '/assets/css/base-styles.css', array('artemis-global-variables'), '1.0');
+    
+    // Enqueue main theme stylesheet
+    wp_enqueue_style('artemis-style', get_stylesheet_uri(), array('artemis-global-variables', 'artemis-base-styles'), '1.0');
+    
     wp_enqueue_script('artemis-header', get_template_directory_uri() . '/assets/js/header.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'artemis_scripts');
