@@ -38,6 +38,33 @@
             opacity: 0.7;
             margin-top: 1rem;
         }
+        .navigation {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .nav-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -46,6 +73,12 @@
         <p>Welcome to Artemis Static Site</p>
         <p>Powered by WordPress + GitHub Pages</p>
         <p class="subtitle">This site is automatically generated from WordPress content</p>
+        <div class="navigation">
+            <a href="static-site/index.html" class="nav-link">Main Site</a>
+            <a href="static-site/blog.html" class="nav-link">Blog</a>
+            <a href="static-site/artemis-hub-blog.html" class="nav-link">Artemis Hub News</a>
+            <a href="static-site/about.html" class="nav-link">About</a>
+        </div>
     </div>
 </body>
 </html>
