@@ -191,6 +191,11 @@ class ArtemisStaticBuilder {
                 bodyClass: 'page-blog'
             });
 
+            await this.buildTemplate('artemis-hub-blog.html', 'artemis-hub-blog.html', {
+                pageTitle: 'Artemis Hub | For Those with Purpose',
+                bodyClass: 'newspaper-blog'
+            });
+
             console.log('🎉 Static site build completed!');
             console.log(`📁 Output directory: ${this.outputDir}`);
         } catch (error) {
